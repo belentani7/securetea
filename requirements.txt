@@ -1,5 +1,5 @@
 APScheduler>=3.6.3
-asgiref>=3.5.2
+asgiref>=3.12.1
 beautifulsoup4>=4.11.1
 bidict>=0.22.0
 biopython>=1.79
