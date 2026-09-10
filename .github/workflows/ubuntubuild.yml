@@ -27,7 +27,7 @@ jobs:
           cp setup1.py setup.py
           echo "done!"
       - name: Check if pre-release exists
-        uses: mukunku/tag-exists-action@v1.0.0
+        uses: mukunku/tag-exists-action@v1.7.0
         id: checkTag
         with:
           tag: 'pre-release'
