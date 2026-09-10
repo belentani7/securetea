@@ -1,4 +1,4 @@
-import React, { component } from "react";
+import React from "react";
 import Dashboard from "views/Dashboard.js";
 import Network from "views/Network.js";
 import Security from "views/Security.js";
