@@ -1,0 +1,119 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "abhisharma404",
+      "name": "Abhishek Sharma",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/29058921?v=4",
+      "profile": "https://abhisharma404.blogspot.com/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "rejahrehim",
+      "name": "Rejah Rehim ",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4394746?v=4",
+      "profile": "http://rejahrehim.com",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "adeyosemanputra",
+      "name": "adeyosemanputra",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/24958168?v=4",
+      "profile": "https://github.com/adeyosemanputra",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "ananthus",
+      "name": "Ananthu S",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/30488894?v=4",
+      "profile": "https://github.com/ananthus",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "sunn-e",
+      "name": "Sunny Dhoke",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/30065288?v=4",
+      "profile": "http://sunn-e.github.io",
+      "contributions": [
+        "bug",
+        "doc"
+      ]
+    },
+    {
+      "login": "kUSHAL0601",
+      "name": "MajAK",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/29600964?v=4",
+      "profile": "https://github.com/kUSHAL0601",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "mishal23",
+      "name": "Mishal Shah",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/21958074?v=4",
+      "profile": "https://mishal23.github.io/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "sam-aldis",
+      "name": "sam@ukjp",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/26642976?v=4",
+      "profile": "https://sam.ukjp.app",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "prince-7",
+      "name": "Aman Singh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/53997924?v=4",
+      "profile": "https://github.com/prince-7",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "DigvijayBhosale1729",
+      "name": "Digvijay Bhosale",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70275323?v=4",
+      "profile": "https://www.linkedin.com/in/digvijay-bhosale-620a96191/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "shubhangi013",
+      "name": "shubhangi013",
+      "avatar_url": "https://avatars.githubusercontent.com/u/78342516?v=4",
+      "profile": "https://github.com/shubhangi013",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "SecureTea-Project",
+  "projectOwner": "OWASP",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

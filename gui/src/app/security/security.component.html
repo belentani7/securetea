@@ -1,0 +1,657 @@
+<div id="main-wrapper">
+    <div class="header">
+        <app-header></app-header>
+    </div>
+    <app-sidebar></app-sidebar>
+    <div class="page-wrapper">
+        <div class="row page-titles pt-2 pb-1 mb-1">
+            <div class="col-md-5 align-self-center">
+          <h1 class="text-primary head-1">Security</h1>
+      </div>
+            <div class="col-md-7 align-self-center">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href='/dashboard'>Home</a></li>
+                    <li class="breadcrumb-item active">Security</li>
+                </ol>
+            </div>
+        </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body p-0">
+              <div id="startForm">
+                <form [formGroup]="notificationsForm" (ngSubmit)="Submit()">
+                    <h1 class="card-title">Twitter Notification</h1>
+                    <h3 class="card-subtitle">Notification to twitter</h3>
+                        <div class="form-group">
+                            <label>API key</label>
+                            <input type="text" class="form-control" formControlName="twitter_apikey" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                        </div>
+                        <div class="form-group">
+                            <label>API secret key</label>
+                            <input type="text" class="form-control" formControlName="twitter_apiSecret" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Access token</label>
+                            <input type="text" class="form-control" formControlName="twitter_token" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Access token secret</label>
+                            <input type="text" class="form-control" formControlName="twitter_tokenSecret" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                        </div>
+                    <hr style="border-width:2px">
+                    <h1 class="card-title">Telegram Notification</h1>
+                    <h3 class="card-subtitle">Notification to telegram</h3>
+                        <div class="form-group">
+                            <label>Token</label>
+                            <input type="text" class="form-control" formControlName="telegram_token" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                        </div>
+                        <div class="form-group">
+                            <label>User Id</label>
+                            <input type="text" class="form-control" formControlName="telegram_userId" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                        </div>
+                    <hr style="border-width:2px">
+                    <h1 class="card-title">Twilio Notification</h1>
+                    <h3 class="card-subtitle">Notification to twilio</h3>
+                        <div class="form-group">
+                            <label>SID</label>
+                            <input type="text" class="form-control" formControlName="twilio_sid" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Token</label>
+                            <input type="text" class="form-control" formControlName="twilio_token" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                        </div>
+                        <div class="form-group">
+                            <label>From</label>
+                            <input type="text" class="form-control" formControlName="twilio_from" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                        </div>
+                        <div class="form-group">
+                            <label>To</label>
+                            <input type="text" class="form-control" formControlName="twilio_to" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                        </div>
+                        <hr style="border-width:2px">
+                        <h1 class="card-title">Whatsapp Notification</h1>
+                        <h3 class="card-subtitle">Notification to whatsapp</h3>
+                            <div class="form-group">
+                                <label>SID</label>
+                                <input type="text" class="form-control" formControlName="whatsapp_sid" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Token</label>
+                                <input type="text" class="form-control" formControlName="whatsapp_token" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                            </div>
+                            <div class="form-group">
+                                <label>From</label>
+                                <input type="text" class="form-control" formControlName="whatsapp_from" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                            </div>
+                            <div class="form-group">
+                                <label>To</label>
+                                <input type="text" class="form-control" formControlName="whatsapp_to" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                            </div>
+                    <hr style="border-width:2px">
+                    <h1 class="card-title">Slack Notification</h1>
+                    <h3 class="card-subtitle">Notification to slack</h3>
+                        <div class="form-group">
+                            <label>Token</label>
+                            <input type="text" class="form-control" formControlName="slack_token" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                        </div>
+                        <div class="form-group">
+                            <label>User Id</label>
+                            <input type="text" class="form-control" formControlName="slack_userId" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                        </div>
+                    <hr style="border-width:2px">
+                    <h1 class="card-title">AWS SES Notification</h1>
+                    <h3 class="card-subtitle">Notification to mail</h3>
+                        <div class="form-group">
+                            <label>Verified Email Id</label>
+                            <input type="text" class="form-control" formControlName="aws_email" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                        </div>
+                        <div class="form-group">
+                            <label>SES Access Key</label>
+                            <input type="text" class="form-control" formControlName="aws_accessKey" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                        </div>
+                        <div class="form-group">
+                            <label>SES Secret Key</label>
+                            <input type="text" class="form-control" formControlName="aws_secretKey" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                        </div>
+                        <hr style="border-width:2px">
+                        <h1 class="card-title">Gmail Notification</h1>
+                        <h3 class="card-subtitle">Notification to Gmail account</h3>
+                            <div class="form-group">
+                                <label>Sender E-mail</label>
+                                <input type="text" class="form-control" formControlName="sender_email" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                            </div>
+                            <div class="form-group">
+                                <label>To E-mail</label>
+                                <input type="text" class="form-control" formControlName="to_email" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" class="form-control" formControlName="password" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                            </div>
+                    <!-- AntiVirus -->
+                    <hr style="border-width:2px">
+                    <div class="form-group">
+                        <div class="col-12">
+                          <div class="row">
+                            <h1 class="card-title">AntiVirus</h1>
+                          <label class="switch">
+                            <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="antivirus" checked/>
+                            <span class="slider round"></span>
+                          </label>
+                          </div>
+                        </div>
+                      </div>
+                      <h3 class="card-subtitle">Configure AntiVirus</h3>
+
+                      <div class="form-group">
+                          <label>Custom scan path</label>
+                          <input type="text" class="form-control" formControlName="custom_scan" placeholder="Leave blank for full scan"/>
+                      </div>
+
+                      <div class="form-group">
+                          <label>Virus Total API key</label>
+                          <input type="text" class="form-control" formControlName="virustotal_api_key" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                      </div>
+
+                      <div class="form-group">
+                          <div class="col-12">
+                            <div class="row">
+                            <label>Automatic updates</label>
+                            <label class="switch">
+                              <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="update" checked/>
+                              <span class="slider round"></span>
+                            </label>
+                            </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="col-12">
+                            <div class="row">
+                            <label>Automatically clean malicious files</label>
+                            <label class="switch">
+                              <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="auto_delete" checked/>
+                              <span class="slider round"></span>
+                            </label>
+                            </div>
+                          </div>
+                      </div>
+
+                    <div class="form-group">
+                        <div class="col-12">
+                          <div class="row">
+                          <label>Monitor USB devices</label>
+                          <label class="switch">
+                            <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="monitor_usb" checked/>
+                            <span class="slider round"></span>
+                          </label>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-12">
+                          <div class="row">
+                          <label>Monitor file modifications real-time (CPU intensive)</label>
+                          <label class="switch">
+                            <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="monitor_file_changes" checked/>
+                            <span class="slider round"></span>
+                          </label>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- Auto Server Patcher -->
+                    <hr style="border-width:2px">
+                    <div class="form-group">
+                        <div class="col-12">
+                          <div class="row">
+                            <h1 class="card-title">Auto Server Patcher</h1>
+                          <label class="switch">
+                            <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="asp" checked/>
+                            <span class="slider round"></span>
+                          </label>
+                          </div>
+                        </div>
+                      </div>
+                      <h3 class="card-subtitle">Configure Auto Server Patcher</h3>
+
+                      <div class="form-group">
+                          <label>Scan for SSL vulnerability</label>
+                          <input type="text" class="form-control" formControlName="sslvuln" placeholder="Enter URL to scan, else leave blank for no scan"/>
+                      </div>
+
+                      <div class="form-group">
+                          <div class="col-12">
+                            <div class="row">
+                            <label>Patch apache configuration</label>
+                            <label class="switch">
+                              <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="apache" checked/>
+                              <span class="slider round"></span>
+                            </label>
+                            </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="col-12">
+                            <div class="row">
+                            <label>Patch system configuration</label>
+                            <label class="switch">
+                              <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="sysctl" checked/>
+                              <span class="slider round"></span>
+                            </label>
+                            </div>
+                          </div>
+                      </div>
+
+                    <div class="form-group">
+                        <div class="col-12">
+                          <div class="row">
+                          <label>Patch login configuration</label>
+                          <label class="switch">
+                            <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="login" checked/>
+                            <span class="slider round"></span>
+                          </label>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-12">
+                          <div class="row">
+                          <label>Patch SSH configuration</label>
+                          <label class="switch">
+                            <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="ssh" checked/>
+                            <span class="slider round"></span>
+                          </label>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- System Log Monitor -->
+                    <hr style="border-width:2px">
+                    <div class="form-group">
+                        <div class="col-12">
+                          <div class="row">
+                            <h1 class="card-title">System Log Monitor</h1>
+                          <label class="switch">
+                            <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="sys_log" checked/>
+                            <span class="slider round"></span>
+                          </label>
+                          </div>
+                        </div>
+                      </div>
+                      <h3 class="card-subtitle">System Log Monitor needs no configuration, toggle right to start</h3>
+                      <!-- Firewall -->
+                      <hr style="border-width:2px">
+                      <div class="form-group">
+                          <div class="col-12">
+                            <div class="row">
+                              <h1 class="card-title">Firewall</h1>
+                            <label class="switch">
+                              <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="firewall" checked/>
+                              <span class="slider round"></span>
+                            </label>
+                            </div>
+                          </div>
+                        </div>
+                        <h3 class="card-subtitle">Configure Firewall</h3>
+                        <!-- Firewall configuration box -->
+                        <div class="form-group">
+                            <label>Name of the interface</label>
+                            <input type="text" class="form-control" formControlName="interface" placeholder="Leave blank to auto-detect"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Inbound IPs</label>
+                            <input type="text" class="form-control" formControlName="ip_inbound" placeholder="List of inbound IPs to allow or filter, e.g. 1.1.1.1, 2.2.2.2"/>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-12">
+                              <div class="row">
+                              <label>Allow</label>
+                              <label class="switch">
+                                <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="inbound_action" checked/>
+                                <span class="slider round"></span>
+                              </label>
+                              </div>
+                            </div>
+                        </div>
+                        <hr style="border-width:1px">
+                        <!-- Firewall configuration box -->
+                        <div class="form-group">
+                            <label>Outbound IPs</label>
+                            <input type="text" class="form-control" formControlName="ip_outbound" placeholder="List of outbound IPs to allow or filter, e.g. 1.1.1.1, 2.2.2.2"/>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-12">
+                              <div class="row">
+                              <label>Allow</label>
+                              <label class="switch">
+                                <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="outbound_action" checked/>
+                                <span class="slider round"></span>
+                              </label>
+                              </div>
+                            </div>
+                        </div>
+                        <hr style="border-width:1px">
+                        <!-- Firewall configuration box -->
+                        <div class="form-group">
+                            <label>Protocols</label>
+                            <input type="text" class="form-control" formControlName="protocols" placeholder="List of protocols to allow or filter, e.g. ICMP, UDP"/>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-12">
+                              <div class="row">
+                              <label>Allow</label>
+                              <label class="switch">
+                                <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="protocol_action" checked/>
+                                <span class="slider round"></span>
+                              </label>
+                              </div>
+                            </div>
+                        </div>
+                        <hr style="border-width:1px">
+                        <!-- Firewall configuration box -->
+                        <div class="form-group">
+                            <label>Downloaded file extensions to scan for</label>
+                            <input type="text" class="form-control" formControlName="extensions" placeholder="Files extensions to allow or filter, e.g. .exe, .mp3"/>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-12">
+                              <div class="row">
+                              <label>Allow</label>
+                              <label class="switch">
+                                <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="scan_load_action" checked/>
+                                <span class="slider round"></span>
+                              </label>
+                              </div>
+                            </div>
+                        </div>
+                        <hr style="border-width:1px">
+                        <!-- Firewall configuration box -->
+                        <div class="form-group">
+                            <label>Source ports</label>
+                            <input type="text" class="form-control" formControlName="sports" placeholder="List of source ports to allow or filter e.g. 80, 443"/>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-12">
+                              <div class="row">
+                              <label>Allow</label>
+                              <label class="switch">
+                                <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="sports_action" checked/>
+                                <span class="slider round"></span>
+                              </label>
+                              </div>
+                            </div>
+                        </div>
+                        <hr style="border-width:1px">
+                        <!-- Firewall configuration box -->
+                        <div class="form-group">
+                            <label>Destination ports</label>
+                            <input type="text" class="form-control" formControlName="dest_ports" placeholder="List of destination ports to allow or filter e.g. 80, 443"/>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-12">
+                              <div class="row">
+                              <label>Allow</label>
+                              <label class="switch">
+                                <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="dest_ports_action" checked/>
+                                <span class="slider round"></span>
+                              </label>
+                              </div>
+                            </div>
+                        </div>
+                        <hr style="border-width:1px">
+                        <!-- Firewall configuration box -->
+                        <div class="form-group">
+                            <label>Domain Name System (DNS)</label>
+                            <input type="text" class="form-control" formControlName="dns" placeholder="List of DNS to allow or filter e.g. mail.google.com"/>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-12">
+                              <div class="row">
+                              <label>Allow</label>
+                              <label class="switch">
+                                <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="dns_action" checked/>
+                                <span class="slider round"></span>
+                              </label>
+                              </div>
+                            </div>
+                        </div>
+                        <hr style="border-width:1px">
+                        <!-- Firewall configuration box -->
+                        <div class="form-group">
+                            <label>Time upper bound</label>
+                            <input type="text" class="form-control" formControlName="time_ub" placeholder="Upper bound time limit to allow connection e.g. 23:59"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Time lower bound</label>
+                            <input type="text" class="form-control" formControlName="time_lb" placeholder="Lower bound time limit to allow network connection e.g. 00:00"/>
+                        </div>
+                        <hr style="border-width:1px">
+                        <div class="form-group">
+                            <div class="col-12">
+                              <div class="row">
+                              <label>Allow HTTP requests</label>
+                              <label class="switch">
+                                <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="http_req" checked/>
+                                <span class="slider round"></span>
+                              </label>
+                              </div>
+                            </div>
+                        </div>
+                        <hr style="border-width:1px">
+                        <div class="form-group">
+                            <div class="col-12">
+                              <div class="row">
+                              <label>Allow HTTP response</label>
+                              <label class="switch">
+                                <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="http_resp" checked/>
+                                <span class="slider round"></span>
+                              </label>
+                              </div>
+                            </div>
+                        </div>
+                        <!-- Server Log Monjtor -->
+                        <hr style="border-width:2px">
+                        <div class="form-group">
+                            <div class="col-12">
+                              <div class="row">
+                                <h1 class="card-title">Server Log Monitor</h1>
+                              <label class="switch">
+                                <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="server_log" checked/>
+                                <span class="slider round"></span>
+                              </label>
+                              </div>
+                            </div>
+                          </div>
+                          <h3 class="card-subtitle">Configure Server Log Monitor</h3>
+                          <div class="form-group">
+                              <label>Web server type</label>
+                              <input type="text" class="form-control" formControlName="log_type" placeholder="Server name e.g. apache, nginx"/>
+                          </div>
+                          <div class="form-group">
+                              <label>Log file path</label>
+                              <input type="text" class="form-control" formControlName="log_file" placeholder="Path of the log file, leave blank to auto-detect"/>
+                          </div>
+                          <div class="form-group">
+                              <label>Monitor window</label>
+                              <input type="text" class="form-control" formControlName="window" placeholder="Days old log to process e.g. 30"/>
+                          </div>
+                          <div class="form-group">
+                              <label>List of IPs to look for</label>
+                              <input type="text" class="form-control" formControlName="ip_list" placeholder="Specific IPs in log file to generate report for e.g. 1.1.1.1, 2.2.2.2"/>
+                          </div>
+                          <div class="form-group">
+                              <label>List of status code to look for</label>
+                              <input type="text" class="form-control" formControlName="status_code" placeholder="List of status code to grab from log file e.g. 200, 404"/>
+                          </div>
+                          <!-- Intrusion Detection System -->
+                          <hr style="border-width:2px">
+                          <div class="form-group">
+                              <div class="col-12">
+                                <div class="row">
+                                  <h1 class="card-title">Intrusion Detection System</h1>
+                                <label class="switch">
+                                  <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="ids" checked/>
+                                  <span class="slider round"></span>
+                                </label>
+                                </div>
+                              </div>
+                            </div>
+                            <h3 class="card-subtitle">Configure Intrusion Detection System</h3>
+                            <div class="form-group">
+                                <label>Name of the interface</label>
+                                <input type="text" class="form-control" formControlName="ids_interface" placeholder="Leave blank to auto-detect"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Threshold</label>
+                                <input type="text" class="form-control" formControlName="threshold" placeholder="Number of times to ignore attack possibilities"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Eligibility Threshold</label>
+                                <input type="text" class="form-control" formControlName="ethreshold" placeholder="Threshold for eligibility traces"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Severity Factor</label>
+                                <input type="text" class="form-control" formControlName="sfactor" placeholder="Severity of each attack"/>
+                            </div>
+                          <!-- Local Web Deface Detection -->
+                          <hr style="border-width:2px">
+                          <div class="form-group">
+                              <div class="col-12">
+                                <div class="row">
+                                  <h1 class="card-title">Local Web Deface Detection & Prevention System</h1>
+                                <label class="switch">
+                                  <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="web_deface" checked/>
+                                  <span class="slider round"></span>
+                                </label>
+                                </div>
+                              </div>
+                            </div>
+                            <h3 class="card-subtitle">Configure Local Web Deface Detection & Prevention System</h3>
+                            <div class="form-group">
+                                <label>Name of the web server</label>
+                                <input type="text" class="form-control" formControlName="server_name" placeholder="Name of the web server e.g. apache, nginx etc."/>
+                            </div>
+                            <div class="form-group">
+                                <label>Path of the web files</label>
+                                <input type="text" class="form-control" formControlName="path" placeholder="Path of the web directory, leave blank to auto-detect"/>
+                            </div>
+                            <!-- Web Application Firewall-->
+                            <hr style="border-width:2px">
+                            <div class="form-group">
+                                <div class="col-12">
+                                  <div class="row">
+                                    <h1 class="card-title">Web Application Firewall</h1>
+                                  <label class="switch">
+                                    <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="waf" checked/>
+                                    <span class="slider round"></span>
+                                  </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <h3 class="card-subtitle">Configure Web Application Firewall</h3>
+                              <div class="form-group">
+                                  <label>Listening IP</label>
+                                  <input type="text" class="form-control" formControlName="listen_ip" placeholder="IP on which WAF will listen on"/>
+                              </div>
+                              <div class="form-group">
+                                  <label>Listening Port</label>
+                                  <input type="text" class="form-control" formControlName="listen_port" placeholder="Listening Port"/>
+                              </div>
+                              <div class="form-group">
+                                  <label>mode</label>
+                                  <input type="text" class="form-control" formControlName="mode" placeholder="mode eg. 0, 1"/>
+                              </div>
+                              <div class="form-group">
+                                <label>Backend Server Config</label>
+                                <input type="text" class="form-control" formControlName="backend_server_config" placeholder="A dictionary containing Key:Value that maps the incoming host(key) to the backend server(value). eg. {'localhost':'localhost:3000'}"/>
+                            </div>
+                            <!-- IoT Anonymity Checker -->
+                            <hr style="border-width:2px">
+                            <div class="form-group">
+                                <div class="col-12">
+                                  <div class="row">
+                                    <h1 class="card-title">IoT Anonymity Checker</h1>
+                                  <label class="switch">
+                                    <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="iot_ano" checked/>
+                                    <span class="slider round"></span>
+                                  </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <h3 class="card-subtitle">Configure IoT Anonymity Checker</h3>
+                              <div class="form-group">
+                                  <label>Shodan API key</label>
+                                  <input type="text" class="form-control" formControlName="shodan_api" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+                              </div>
+                              <div class="form-group">
+                                  <label>Public IP address of the device</label>
+                                  <input type="text" class="form-control" formControlName="ip_addr_iot" placeholder="Leave blank to auto-detect"/>
+                              </div>
+                              <!-- Insecure Headers -->
+                              <hr style="border-width:2px">
+                              <div class="form-group">
+                                  <div class="col-12">
+                                    <div class="row">
+                                      <h1 class="card-title">Insecure Headers</h1>
+                                    <label class="switch">
+                                      <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="insecure_headers" checked/>
+                                      <span class="slider round"></span>
+                                    </label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <h3 class="card-subtitle">Configure Insecure Headers</h3>
+                                <div class="form-group">
+                                    <label>URL of the website</label>
+                                    <input type="text" class="form-control" formControlName="url_ih" placeholder="Enter the URL of the website to check insecure headers for"/>
+                                </div>
+                              <!-- Social Engineering -->
+                              <hr style="border-width:2px">
+                              <div class="form-group">
+                                  <div class="col-12">
+                                    <div class="row">
+                                      <h1 class="card-title">Social Engineering</h1>
+                                    </div>
+                                  </div>
+                                </div>
+                                <h3 class="card-subtitle">Configure Social Engineering</h3>
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    <input type="text" class="form-control" formControlName="se_mail_id" placeholder="Enter the mail id you want to check"/>
+                                </div>
+                              <!-- History Logger -->
+                              <hr style="border-width:2px">
+                              <div class="form-group">
+                                <h3 class="card-subtitle">Configure History Logger</h3>
+                                  <div class="col-12">
+                                    <div class="row">
+                                      <h1 class="card-title">History Logger</h1>
+                                    <label class="switch">
+                                    <input type="checkbox" (change)="toggleCheckbox($event)" class="form-control" formControlName="hist_logger"/>
+                                    <span class="slider round"></span>
+                                  </label>
+                                  </div>
+                                </div>
+                              </div>
+                      <br>
+                    <button type="submit" class="btn btn-primary m-b-10 pull-right" >Secure</button>
+                </form>
+                <div class="error">
+                    {{ error }}
+                </div>
+              </div>
+              <div id="stopForm">
+                  <button (click)="Stop()" class="btn btn-primary m-b-10 pull-right">Stop</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</div>
