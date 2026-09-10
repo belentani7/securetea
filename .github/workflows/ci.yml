@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  python:
+    name: Python checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Compile check (all Python modules)
+        run: |
+          python -m compileall -q securetea ServerApp SecureTea_Server SecureTea.py || echo "::warning::Some files do not compile"
+      - name: Install minimal deps and run smoke test
+        run: |
+          pip install --upgrade pip
+          pip install requests scapy
+          python -c "import securetea; print('securetea import OK')"
+
+  frontend:
+    name: React GUI build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: react_gui
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: react_gui/package-lock.json
+      - run: npm ci
+      - run: npm run build
