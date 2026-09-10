@@ -17,7 +17,7 @@
     "react-router-dom": "5.2.0",
     "react-scripts": "^5.0.1",
     "reactstrap": "8.8.1",
-    "sass": "1.53.0",
+    "sass": "1.104.0",
     "universal-cookie": "^4.0.4"
   },
   "optionalDependencies": {
